@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<div  style="background:rgb(52, 52, 110); height: 91vh;">
+    <div style="padding: 40px;">
+        
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+        
+                    <form>
+        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label for="" class="form-label">Nombre del empleado</label>
+                                    <input [(ngModel)]="empleado.nombre_empleado" type="text" class="form-control"
+                                        name="nombre_empleado" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="" class="form-label">Apellido del empleado</label>
+                                    <input [(ngModel)]="empleado.apellidos" type="text" class="form-control" name="apellido">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="" class="form-label">Correo de empleado</label>
+                                    <input [(ngModel)]="empleado.correo" type="text" class="form-control" name="correo">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="" class="form-label">Cargo</label>
+                                    <select class="form-select" name="nombreCargo"
+                                        [(ngModel)]="empleado.nombre" required="true">
+                                        <option disabled>Seleccion el cargo o rol</option>
+                                        <option *ngFor="let b of ListarCargos" [value]="b.id_cargo">{{b.nombre}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label for="" class="form-label">Nombre para el usuario </label>
+                                    <input [(ngModel)]="empleado.usuario" type="text" class="form-control" name="usuario">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="" class="form-label">Password</label>
+                                    <input [(ngModel)]="empleado.password" type="text" class="form-control" name="password">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="" class="form-label">Telefono</label>
+                                    <input [(ngModel)]="empleado.telefono" type="text" class="form-control" name="telefono">
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div class="d-flex justify-content-center">
+                            <button (click)="actualizar()" class="btn btn-primary mx-1"><i class="fa-sharp fa-solid fa-check me-3"></i>ACTUALIZAR</button>
+                            <button type="reset" class="btn btn-warning mx-1"><i class="fa-solid fa-broom-wide"></i>LIMPIAR</button>
+                            <button type="reset" class="btn btn-secondary mx-1" routerLink="/empleado">CACELAR</button>
+                        </div>
+                    </form>
+        
+                </div>
+     
+            </div>
+        </div>
+    </div>    
+</div>    
+

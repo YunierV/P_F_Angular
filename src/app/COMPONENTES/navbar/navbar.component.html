@@ -1,0 +1,24 @@
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" >Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" *ngFor="let rutas of rutas">
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" aria-current="page" routerLink="{{rutas.rutas}}" style="font-weight: bold;margin:  0 5px 0 5px;color: rgb(52, 52, 110);border: none;">{{rutas.nombre}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <img src="../../../assets/149071.png" alt="" width="30" height="30">
+                <a class="btn btn-outline-light" style="margin:  0 5px 0 5px;color: rgb(52, 52, 110);border: none;font-weight: bold;" (click)="deleteToken()">Cerrar Sesion</a>
+            </div>
+        </div>
+    </nav>
+</div>
+

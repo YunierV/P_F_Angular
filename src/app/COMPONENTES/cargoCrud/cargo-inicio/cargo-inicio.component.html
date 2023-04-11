@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+
+
+<div style="background:rgb(52, 52, 110); height: 91vh;">
+    <div style="padding: 40px;">
+        
+        <div class="container col-lg-9 mt-5">
+        
+            <div class="card">
+                <div class="card-header">
+                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-primary"><i class="fa-sharp fa-solid fa-plus me-2"></i>AGREGAR
+                        NUEVO REGISTRO</button>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#ID</th>
+                                <th scope="col">NOMBRE CARGO</th>
+                                <th scope="col">ELIMINAR</th>
+                                <th scope="col">EDITAR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let C of ListarCargos; let i = index">
+                                <th scope="row">{{C.id_cargo}}</th>
+                                <td scope="row">{{C.nombre}}</td>
+                                <td scope="row"><button (click)="eliminar(C.id_cargo)" type="button"
+                                        class="btn btn-outline-danger" style="font-weight: bolder;"><i class="fa-sharp fa-solid fa-trash"></i></button></td>
+                                <td scope="row"><button (click)='modificar(C.id_cargo)' type="button"
+                                        class="btn btn-outline-primary" style="font-weight: bolder;"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">REGISTRO DE CARGOS</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+
+                    <div class="card">
+                        <div class="card-body">
+                                    <form>
+                                        <div class="form-group mb-3">
+                                            <label for="" class="form-label">Nombre de cargo</label>
+                                            <input [(ngModel)]="cargo.nombre" type="text" class="form-control" name="nombre">
+                                        </div>
+                
+                                        <div class="d-flex justify-content-center">
+                                            <button (click)="agregar()" class="btn btn-primary mx-1"><i class="fa-sharp fa-solid fa-address-book me-2"></i>GUARDAR</button>
+                                            <button type="reset" class="btn btn-warning mx-1">LIMPIAR</button>
+                                        </div>
+                                    </form>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

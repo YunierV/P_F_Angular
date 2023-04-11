@@ -1,0 +1,29 @@
+<div class="container" style="display: flex; color: white;">
+    <div style="border: 1px solid rgb(100, 100, 100); border-radius: 10px; position: absolute; left: 50%; top: 44%;
+    transform: translate(-50%,-50%); width: 440px; 
+    background: rgb(52, 52, 110);
+    box-shadow: 2px 2px 30px 10px rgb(52, 52, 110);">
+    <div style="display: flex; justify-content: center;">
+        <img src="../../../assets/149071.png" alt="" height="100px" width="100px" style="margin:10px 0 5px 0;">
+    </div>
+        <form style="margin: 10px; font-family: Arial, Helvetica, sans-serif; background: transparent;">
+
+            <div class="form-group mb-3">
+                <label for="" class="form-label">Usuario</label>
+                <input [(ngModel)]="user.usuario" type="text" class="form-control" name="nombre">
+            </div>
+        
+            <div class="form-group mb-3">
+                <label for="" class="form-label">Contraseña</label>
+                <input [(ngModel)]="user.password" type="text" class="form-control" name="logo">
+            </div>
+        
+            <div class="d-flex justify-content-center">
+                <button (click)="login()" style="text-transform: uppercase;
+                width: 100px;height: 40px;border: none;border-radius: 7px;
+                color: white;font-weight: bolder;" class="btn btn-primary">Entrar</button>
+            </div>
+        </form>
+        
+    </div>
+</div>

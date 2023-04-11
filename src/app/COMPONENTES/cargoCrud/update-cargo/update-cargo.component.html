@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+
+    <div style="background:rgb(52, 52, 110); height: 91vh;">
+        <div style="padding: 40px;">
+            <div class="container col-lg-10 mt-5"></div>
+            <div class="card">
+                <div class="card-header">ACTUALIZACION DE REGISTRO DE CAMPOS</div>
+                <div class="card-body">
+
+                    <form>
+                        <div class="form-group mb-3">
+                            <label for="" class="form-label">Nombre de cargo</label>
+                            <input [(ngModel)]="cargo.nombre" type="text" class="form-control" name="nombre">
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                            <button (click)="modificar()" class="btn btn-primary mx-1"><i class="fa-sharp fa-solid fa-check me-3"></i>ACTUALIZAR</button>
+                            <button type="reset" class="btn btn-warning mx-1">LIMPIAR</button>
+                            <button class="btn btn-secondary mx-1" routerLink="/cargo">CANCELAR</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>

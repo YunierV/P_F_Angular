@@ -1,0 +1,135 @@
+<app-navbar></app-navbar>
+
+<div  style="background:rgb(52, 52, 110); height: 91vh;">
+    <div style="padding: 20px;">
+        <div class="container col-xll-13 mt-5">
+        
+            <div class="card">
+                
+                <div class="card-header">
+                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-primary"><i class="fa-sharp fa-solid fa-plus me-2"></i>AGREGAR
+                        NUEVO REGISTRO</button>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table col-xll-12">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">#ID</th>
+                                <th scope="col">NOMBRE EMPLEADO</th>
+                                <th scope="col">APELLIDOS</th>
+                                <th scope="col">CORREO</th>
+                                <th scope="col">USUARIO</th>
+                                <th scope="col">IMG</th>
+                                <th scope="col">PASSWORD</th>
+                                <th scope="col">TELEFONO</th>
+                                <th scope="col">NOMBRE CARGO</th>
+                                <th scope="col">ELIMINAR</th>
+                                <th scope="col">EDITAR</th>
+        
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let A of ListarEmpleado; let i = index">
+                                <th scope="row">{{A.id_empleado}}</th>
+                                <td scope="row">{{A.nombre_empleado}}</td>
+                                <td scope="row">{{A.apellidos}}</td>
+                                <td scope="row">{{A.correo}}</td>
+                                <td scope="row">{{A.usuario}}</td>
+                                <td scope="row"><img src="../../../../assets/149071.png" alt="" height="50" width="50"></td>
+                                <td scope="row">{{A.password}}</td>
+                                <td scope="row">{{A.telefono}}</td>
+                                <td scope="row">{{A.nombre}}</td>
+        
+                                <td scope="row"><button (click)="eliminar(A.id_empleado)" type="button"
+                                        class="btn btn-outline-danger" style="font-weight: bolder;"><i class="fa-sharp fa-solid fa-trash"></i></button></td>
+                                <td scope="row"><button (click)='modificar(A.id_empleado)' type="button"
+                                        class="btn btn-outline-primary" style="font-weight: bolder;"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">REGISTRO DE EMPLEADOS</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <form>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group mb-3">
+                                        <label for="" class="form-label">Nombre del empleado</label>
+                                        <input [(ngModel)]="empleado.nombre_empleado" type="text" class="form-control"
+                                            name="nombre_empleado">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="" class="form-label">Apellido del empleado</label>
+                                        <input [(ngModel)]="empleado.apellidos" type="text" class="form-control"
+                                            name="apellido">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="" class="form-label">Correo de empleado</label>
+                                        <input [(ngModel)]="empleado.correo" type="text" class="form-control"
+                                            name="correo">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="" class="form-label">Cargo</label>
+                                        <select   class="form-select" aria-label="Default select example"  name="nombreCargo" [(ngModel)]="empleado.nombre" >
+                                                <option disabled default >Seleccion el cargo o rol</option>
+                                                <option *ngFor="let b of ListarCargos" [value]="b.id_cargo">{{b.nombre}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group mb-3">
+                                        <label for="" class="form-label">Nombre para el usuario </label>
+                                        <input [(ngModel)]="empleado.usuario" type="text" class="form-control" name="usuario">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="" class="form-label">Password</label>
+                                        <input [(ngModel)]="empleado.password" type="text" class="form-control" name="password">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="" class="form-label">Telefono</label>
+                                        <input [(ngModel)]="empleado.telefono" type="text" class="form-control" name="telefono">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <button (click)="agregar()" class="btn btn-primary mx-1"><i class="fa-sharp fa-solid fa-address-book me-2"></i>GUARDAR</button>
+                                <button type="reset" class="btn btn-warning mx-1">LIMPIAR</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+            </div>
+        </div>
+    </div>
+</div>
